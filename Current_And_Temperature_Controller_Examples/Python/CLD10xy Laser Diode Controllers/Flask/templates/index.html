@@ -3,46 +3,15 @@
 
 <head>
 
-    <link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet">
-    <!-- 在VS Code中测试css样式用 -->
-    <!-- <link rel="stylesheet" href="../static/css/style.css"> -->
+    <!-- <link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet"> -->
+    <!-- <script src="{{url_for('static', filename='js/scripts.js')}}"></script> -->
+
+    <!-- 在VS Code中测试用 -->
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="../static/js/scripts.js"></script>
+
     <title>CLD1015 Control</title>
-    <script>
-        function setSetpoint() {
-            var setpoint = document.getElementById("setpoint").value;
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "/set_setpoint");
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    document.getElementById("setpoint-value").innerHTML = setpoint;
-                }
-            };
-            xhr.send("setpoint=" + setpoint);
-        }
 
-        function turnOn() {
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", "/turn_on");
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    document.getElementById("ld-status").innerHTML = "ON";
-                }
-            };
-            xhr.send();
-        }
-
-        function turnOff() {
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", "/turn_off");
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    document.getElementById("ld-status").innerHTML = "OFF";
-                }
-            };
-            xhr.send();
-        }
-    </script>
 </head>
 
 <body>
@@ -61,7 +30,6 @@
         <br>
         <input class="button" type="button" value="Set" onclick="setSetpoint()">
     </form>
-
 
 </body>
 
