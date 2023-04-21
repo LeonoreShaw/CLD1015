@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../static/css/style.css">
     <script src="../static/js/scripts.js"></script>
 
+    <link rel="shortcut icon" href="#" />
     <title>CLD1015 Control</title>
 
 </head>
@@ -23,10 +24,11 @@
         <button class="button" onclick="turnOff()">Turn Off LD</button>
     </div>
 
-    <h1>Current Setpoint: <span id="setpoint-value">{{ setpoint }}</span></h1>
+    <h1>Current Setpoint: <span id="setpoint-value">{{ setpoint }}</span> A</h1>
     <form>
         <label for="setpoint">New Setpoint:</label>
-        <input type="text" id="setpoint" name="setpoint">
+        <input placeholder="请输入要设定的电流值" type="number" id="setpoint" name="setpoint" min="0" max="1" step="0.001"
+            oninput="if(value>1)value=1" onkeydown="if (event.keyCode == 13) { setSetpoint(); return false; }">
         <br>
         <input class="button" type="button" value="Set" onclick="setSetpoint()">
     </form>
