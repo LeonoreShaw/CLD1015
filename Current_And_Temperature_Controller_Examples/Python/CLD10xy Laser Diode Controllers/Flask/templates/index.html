@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLD1015控制界面</title>
+    <style>
+        /* 省略CSS样式 */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>CLD1015控制界面</h1>
+        <div class="input-group">
+            <label for="current-input">电流值：</label>
+            <input type="number" id="current-input" min="0" max="0.1" step="0.001" value="0.065">
+            <button id="set-current-btn">设置</button>
+        </div>
+        <div class="result" id="result"></div>
+        <button id="connect-btn">连接设备</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            var instr;
+            $('#connect-btn').on('click', function () {
+                $.ajax({
+                    url: '/connect',
+                    success: function () {
+                        var rm = new PyVisa.ResourceManager();
+                        instr = rm.open_resource('USB0::0x1313::0x804F::M00295819::INSTR');
+                    }
+                });
+            });
+            $('#set-current-btn').on('click', function () {
+                var current = $('#current-input').val();
+                instr.write('source1:current:level:amplitude ' + current);
+                var newCurrent = instr.query('source1:current:level:amplitude?');
+                $('#result').text('设置的电流值：' + newCurrent);
+            });
+        });
+    </script>
+</body>
+
+</html>
