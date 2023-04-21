@@ -11,7 +11,7 @@ rm = pyvisa.ResourceManager()
 def index():
     # Get the current setpoint
     # setpoint = instr.query("source1:current:level:amplitude?")
-    return render_template('index.html', setpoint=1)
+    return render_template('index.html', setpoint=0.666)
 
 @app.route('/set_setpoint', methods=['POST'])
 def set_setpoint():
