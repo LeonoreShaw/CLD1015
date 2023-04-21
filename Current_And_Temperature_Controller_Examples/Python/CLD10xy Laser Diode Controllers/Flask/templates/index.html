@@ -1,66 +1,17 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+
+    <link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet">
     <title>CLD1015 Control</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-        }
-        h1 {
-            color: #333;
-            text-align: center;
-            margin-top: 50px;
-        }
-        form {
-            text-align: center;
-            margin-top: 50px;
-        }
-        label {
-            display: block;
-            margin-bottom: 10px;
-        }
-        input[type="text"] {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-            width: 200px;
-        }
-        input[type="submit"] {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        input[type="submit"]:hover {
-            background-color: #3e8e41;
-        }
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-        .button:hover {
-            background-color: #3e8e41;
-        }
-    </style>
     <script>
         function setSetpoint() {
             var setpoint = document.getElementById("setpoint").value;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", "/set_setpoint");
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.onreadystatechange = function() {
+            xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     document.getElementById("setpoint-value").innerHTML = setpoint;
                 }
@@ -71,7 +22,7 @@
         function turnOn() {
             var xhr = new XMLHttpRequest();
             xhr.open("GET", "/turn_on");
-            xhr.onreadystatechange = function() {
+            xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     document.getElementById("ld-status").innerHTML = "ON";
                 }
@@ -82,7 +33,7 @@
         function turnOff() {
             var xhr = new XMLHttpRequest();
             xhr.open("GET", "/turn_off");
-            xhr.onreadystatechange = function() {
+            xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     document.getElementById("ld-status").innerHTML = "OFF";
                 }
@@ -91,7 +42,16 @@
         }
     </script>
 </head>
+
 <body>
+
+    <h1>LD Status: <span id="ld-status">OFF</span></h1>
+
+    <div>
+        <button class="button" onclick="turnOn()">Turn On LD</button>
+        <button class="button" onclick="turnOff()">Turn Off LD</button>
+    </div>
+
     <h1>Current Setpoint: <span id="setpoint-value">{{ setpoint }}</span></h1>
     <form>
         <label for="setpoint">New Setpoint:</label>
@@ -100,12 +60,7 @@
         <input class="button" type="button" value="Set" onclick="setSetpoint()">
     </form>
 
-    <h2>LD Status: <span id="ld-status">OFF</span></h2>
 
-    <div>
-        <button class="button" onclick="turnOn()">Turn On LD</button>
-        <button class="button" onclick="turnOff()">Turn Off LD</button>
-    </div>
-    
 </body>
+
 </html>
