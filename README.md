@@ -21,4 +21,6 @@ Please make sure to update tests as appropriate.
 
 ## License
 
-See the [LICENSE](LICENSE) file for license rights and limitations (MIT).
+Copyright (c) Léonore Shaw. All rights reserved.
+
+Licensed under the [MIT](LICENSE) license.
