@@ -4,7 +4,7 @@ import pyvisa
 app = Flask(__name__)
 
 # Open the connection to the device
-rm = pyvisa.ResourceManager()
+# rm = pyvisa.ResourceManager()
 # instr = rm.open_resource('USB0::0x1313::0x804F::M00295819::INSTR')
 
 @app.route('/')
