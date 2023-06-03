@@ -23,7 +23,7 @@ Please make sure to update tests as appropriate.
 
 ## License
 
-MIT License
+    MIT License
 
     Copyright (c) 2023 Léonore Shaw
 
