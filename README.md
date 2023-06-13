@@ -4,9 +4,8 @@
 
 <br>
 <br>
-
-
-# Control THORLABS CLD1015 in Flask
+<h1 align="center">Control THORLABS CLD1015 in Flask</h1>
+<br>
 a Python Project to control THORLABS CLD1015 through Web Brower.
 
 ## Introduction
