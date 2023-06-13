@@ -1,3 +1,11 @@
+<div align="center">
+    <img src="ThorlabsDog.jpg">
+</div>
+
+<br>
+<br>
+
+
 # Control THORLABS CLD1015 in Flask
 a Python Project to control THORLABS CLD1015 through Web Brower.
 
