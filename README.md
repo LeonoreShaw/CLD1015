@@ -12,8 +12,7 @@ a Python Project to control THORLABS<sup>&reg;</sup> CLD1015 through Web Brower.
 
 This Flask project runs on a local computer that connects the CLD1015 through USB as a server. Any LAN devices can send command to the CLD1015 through web brower.
 
-You can turn on/off the LD and change the current setpoint easily.
-
+You can easily turn on/off the LD and change the current setpoint using web browsers on both your computer and your mobile phone.
 
 <br>
 
