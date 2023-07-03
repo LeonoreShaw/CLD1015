@@ -6,7 +6,7 @@
 <br>
 <h1 align="center">Control THORLABS<sup>&reg;</sup> CLD1015 in Flask</h1>
 <br>
-a Python Project to control THORLABS CLD1015 through Web Brower.
+a Python Project to control THORLABS<sup>&reg;</sup> CLD1015 through Web Brower.
 
 ## Introduction
 
@@ -14,9 +14,15 @@ This Flask project runs on a local computer that connects the CLD1015 through US
 
 You can turn on/off the LD and change the current setpoint easily.
 
-![CLD1015 Remote Mode](https://user-images.githubusercontent.com/82745812/233766885-7a6473fe-d277-49b5-83f4-a4238dc93730.jpg)
 
-  
+<br>
+
+<div align="center">
+    <img src="https://user-images.githubusercontent.com/82745812/233766885-7a6473fe-d277-49b5-83f4-a4238dc93730.jpg" alt="CLD1015 in remote" style="display: block; margin: auto; width: 80%;">
+</div>
+
+<br>
+
 > **Note**
 > Once the command is sent, the CLD1015 will be in the remote control state, and the remote icon on the panel will be lit.
 
