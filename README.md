@@ -16,10 +16,10 @@ You can turn on/off the LD and change the current setpoint easily.
 
 ![CLD1015 Remote Mode](https://user-images.githubusercontent.com/82745812/233766885-7a6473fe-d277-49b5-83f4-a4238dc93730.jpg)
 
->   
+  
 > **Note** Once the command is sent, the CLD1015 will be in the remote control state, and the remote icon on the panel will be lit.
-> 
->   
+
+> **Warning** Once the CLD1015 is in the remote control state, the local operation will be prohibited unless the local button on the panel is touched.
 
 ## Usage
 ```bash
