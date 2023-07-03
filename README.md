@@ -1,10 +1,10 @@
 <div align="center">
-    <img src="ThorlabsDog.jpg">
+    <img src="dog.png">
 </div>
 
 <br>
 <br>
-<h1 align="center">Control THORLABS CLD1015 in Flask</h1>
+<h1 align="center">Control THORLABS<sup>&reg;</sup> CLD1015 in Flask</h1>
 <br>
 a Python Project to control THORLABS CLD1015 through Web Brower.
 
